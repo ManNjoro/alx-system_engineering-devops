@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -1A | sort -t. -k1.2,1 -k2n | sed 's/$/,/;s/^\..*/&./' | tr -d '\n' | sed 's/,$/\n/'
+ls -xamp
