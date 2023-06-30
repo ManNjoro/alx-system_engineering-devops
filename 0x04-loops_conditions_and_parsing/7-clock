@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
-# script that displays time for 12 hours and 59 minutes
-hr=0
-while [ $hr -le 12 ]; do
-    echo "Hour:" $hr
-    min=1
-    while [ $min -le 59 ]; do
-	echo $min
-	let min=min+1
+# This script is displaying 1-20 with differents strings using case statement
+i=0
+while (( i <= 12 ))
+do
+  echo "Hour: $i"
+    j=1
+    while (( j <= 59 ))
+    do
+      echo $j
+      ((j++))
     done
-    let hr=hr+1
+  ((i++))
 done
