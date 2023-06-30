@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+#To infinity and beyond indefinitely
 function handle_sigterm {
   echo "I am invincible!!!"
   exit
