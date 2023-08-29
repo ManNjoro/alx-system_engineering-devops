@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Installs nginx web server,updates landing page and error page
+
+sudo apt-get -y update
+sudo apt-get install -y nginx
+echo "Hello World!" | sudo tee /etc/nginx/html/index.html
+echo "server {
+    listen 80;
+    listen [::]:80 default_server;
+    root   /etc/nginx/html;
+    index  index.html;
+    location /redirect_me {
+        return 301 https://www.youtube.com/watch?v=SlxFYguZxm8;
+    }
+error_page 404 /404.html;
+    location = /404.html{
+        root /etc/nginx/html;
+        internal;
+    }
+}" | sudo tee /etc/nginx/sites-available/default
+sudo service nginx restart
