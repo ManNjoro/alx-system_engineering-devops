@@ -3,8 +3,10 @@
 
 sudo apt-get -y update
 sudo apt-get install -y nginx
-echo "Hello World!" | sudo tee /etc/nginx/html/index.html
-echo "Ceci n'est pas une page" > /etc/nginx/html/404.html
+echo "Hello World!" > index.html
+sudo mv index.html /var/www/html
+echo "Ceci n'est pas une page" > 404.html
+sudo mv 404.html /var/www/html
 echo "server {
     listen 80;
     listen [::]:80 default_server;
@@ -18,5 +20,6 @@ error_page 404 /404.html;
         root /etc/nginx/html;
         internal;
     }
-}" | sudo tee /etc/nginx/sites-available/default
+}" > default
+sudo mv -f default /etc/nginx/sites-available/default
 sudo service nginx restart
