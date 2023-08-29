@@ -4,6 +4,7 @@
 sudo apt-get -y update
 sudo apt-get install -y nginx
 echo "Hello World!" | sudo tee /etc/nginx/html/index.html
+echo "Ceci n'est pas une page" > /etc/nginx/html/404.html
 echo "server {
     listen 80;
     listen [::]:80 default_server;
