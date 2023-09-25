@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import requests
-import argv
+import sys
 """
 script to fetch api
 """
@@ -11,7 +11,7 @@ if __name__ == "__main__":
     program to get employees todo list
     progress
     """
-    ID = int(argv[1])
+    ID = int(sys.argv[1])
     user = requests.get("https://jsonplaceholder.typicode.com/users/{}".
                         format(ID)).json()
     todo = requests.get("https://jsonplaceholder.typicode.com/todos?userId={}".
