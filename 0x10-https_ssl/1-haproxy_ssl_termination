@@ -48,5 +48,5 @@ frontend https
     mode http
     option httplog
     acl is_root path -i /
-    http-request set-header Host www.mannjoro.com
+    http-request set-header Host www.mannjoro.tech
     use_backend web-backend if is_root
